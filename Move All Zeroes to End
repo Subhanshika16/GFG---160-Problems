@@ -1,0 +1,9 @@
+class Solution {
+  public:
+    void pushZerosToEnd(vector<int>& arr) {
+        int j = 0,n = arr.size();  // initalizing 2 variables
+        for(int i = 0;i < n; i++){  // loop that run to check every element
+            if (arr[i])swap(arr[i],arr[j++]);// If the current element is not zero, swap it with the element at position j, and then move j one step forward
+        }
+    }
+};

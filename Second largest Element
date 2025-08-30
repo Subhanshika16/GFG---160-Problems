@@ -1,0 +1,24 @@
+class Solution {
+  public:
+    int getSecondLargest(vector<int> &arr) {
+        // code here
+        int n = arr.size();
+        // sort the array 
+        sort(arr.begin(),arr.end());
+        //start from second last element asa the last element is the largest 
+        for (int i = n- 2 ; i>=0; i--)
+        {
+            if (arr[i]!=arr[n-1]){
+                return arr[i];
+            }
+        }
+        //if no second num was found then return -1 
+        return -1;
+    }
+     int main()
+     {
+         vector<int>arr = {12,35,1,10,34,1};
+         cout<<getSecondLargest(arr);
+         return 0;
+     }
+};

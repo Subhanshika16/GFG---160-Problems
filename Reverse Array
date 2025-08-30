@@ -1,0 +1,24 @@
+class Solution {
+  public:
+    void reverseArray(vector<int> &arr) {
+        // Initialize two pointers:
+        //'left' starts at the beginning (0)
+       //'right' starts at the end (n-1)
+        int left = 0 , right = arr.size()-1;
+      
+        //Keep swapping until the two pointers meet
+        while(left<right){
+            swap(arr[left],arr[right]); // Swap the elements at 'left' and 'right'
+            left++; // Move 'left' forward
+            right--; // Move 'right' backward
+        }
+    }
+    
+    int main(){
+        vector<int>arr = {4,5,2};
+        reverseArray(arr); // Call the function to reverse the array
+        for ( int i = 0 ; i<arr.size();i++) // Print the reversed array
+         cout<<arr[i]<<""; 
+        return 0;
+    }
+};

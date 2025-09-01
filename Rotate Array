@@ -1,0 +1,36 @@
+class Solution {
+  public:
+    // Function to reverse part of the array
+    void reverseArray(vector<int>&arr,int start , int end){
+        while(start<end){
+            swap(arr[start],arr[end]);
+            start++;
+            end--;
+        }
+    }
+
+    // Function to rotate an array by d elements in counter-clockwise direction.
+    void rotateArr(vector<int>& arr, int d) {
+        // code here
+        int n = arr.size();
+        d = d%n; // In case d >= n
+        
+        reverseArray(arr,0,d-1);  // Step 1: Reverse first d elements
+        reverseArray(arr,d,n-1);  // Step 2: Reverse remaining n-d elements
+        reverseArray(arr,0,n-1);  // Step 3: Reverse the whole array
+    }
+    
+    int main(){
+        vector<int>arr={1,2,3,4,5};
+        int d=2;
+        
+        Solution obj;
+        obj.rotateArr(arr,d);
+        
+        for(int x:arr){
+            cout<<x<<" ";
+        }
+        
+        return 0;
+    }
+};
